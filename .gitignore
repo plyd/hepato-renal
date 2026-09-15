@@ -42,3 +42,6 @@ next-env.d.ts
 
 # fixtures patient (jamais versionnées)
 lib/engine/__tests__/fixtures/private/
+
+# images de test locales (jamais versionnées)
+public/_test/

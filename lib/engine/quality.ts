@@ -17,7 +17,7 @@ export interface QualityInput {
 /** Seuils provisoires, à recaler sur les images de validation (docs/validation-protocol.md). */
 export const QUALITY_THRESHOLDS = {
   minSectorWidthPx: 500,
-  minPxPerCm: 15,
+  minPxPerCm: 20, // 6 mm ≥ 12 px de diamètre ; en dessous, les figures compressées donnent des ratios aberrants (test sur la figure 2 de la thèse)
   roiAreaWarnPx: 150, // en dessous, la moyenne devient instable (Johnson 2021 utilisait > 400 px à plus haute résolution)
   roiAreaBlockPx: 100,
   cvWarn: 0.25,

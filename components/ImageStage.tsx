@@ -99,7 +99,7 @@ export function ImageStage(p: ImageStageProps) {
   const guideY = p.mode === "roi" ? (p.active === "liver" ? p.kidney?.cy : p.liver?.cy) : undefined;
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 min-w-0 max-w-full">
       <div className="flex items-center gap-2 text-[12px] text-muted">
         <span>Zoom</span>
         {[1, 1.5, 2, 3].map((z) => (
@@ -107,7 +107,7 @@ export function ImageStage(p: ImageStageProps) {
         ))}
         <span className="ml-auto">{p.width}×{p.height} px</span>
       </div>
-      <div className="relative overflow-auto rounded-xl border border-line bg-black max-h-[70vh]" style={{ touchAction: p.mode === "view" ? "auto" : "none" }}>
+      <div className="relative overflow-auto rounded-xl border border-line bg-black max-h-[70vh] w-full max-w-full" style={{ touchAction: p.mode === "view" ? "auto" : "none" }}>
         <div className="relative" style={{ width: p.width * zoom, height: p.height * zoom }}>
           <canvas ref={canvasRef} width={p.width} height={p.height} className="absolute inset-0" style={{ width: p.width * zoom, height: p.height * zoom, imageRendering: zoom >= 2 ? "pixelated" : "auto" }} />
           <svg ref={svgRef} viewBox={`0 0 ${p.width} ${p.height}`} className="absolute inset-0 select-none" style={{ width: p.width * zoom, height: p.height * zoom, cursor: p.mode === "view" ? "default" : "crosshair" }}

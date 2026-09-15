@@ -30,7 +30,7 @@ describe("runChecks", () => {
     ["source manquante", { source: null }, "source-missing:block"],
     ["rein non confirmé", { renalNormal: false }, "renal-unknown:block"],
     ["échelle inconnue", { calibration: null }, "scale-unknown:block"],
-    ["résolution insuffisante", { calibration: { ...base.calibration!, pxPerCm: 12 } }, "image-too-small:block"],
+    ["résolution insuffisante", { calibration: { ...base.calibration!, pxPerCm: 16 } }, "image-too-small:block"],
     ["ROI foie manquant", { liver: null }, "roi-missing-foie:block"],
     ["ROI rein manquant", { kidney: null }, "roi-missing-rein:block"],
     ["ROI trop petit", { liver: roi({ r: 4, n: 50, nTotal: 50 }) }, "roi-too-small-foie:block"],
