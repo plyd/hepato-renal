@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0e1113;
+  --surface: #171b1e;
+  --surface-2: #1e2429;
+  --line: #262d32;
+  --text: #e6e9ea;
+  --muted: #8b9398;
+  --dim: #5c656b;
+  --accent: #2dd4bf;
+  --accent-dim: rgba(45, 212, 191, 0.14);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245, 158, 11, 0.14);
+  --violet: #a78bfa;
+  --violet-dim: rgba(167, 139, 250, 0.14);
+  --ko: #f87171;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-accent: var(--accent);
+  --color-accent-dim: var(--accent-dim);
+  --color-amber: var(--amber);
+  --color-amber-dim: var(--amber-dim);
+  --color-violet: var(--violet);
+  --color-violet-dim: var(--violet-dim);
+  --color-ko: var(--ko);
+  --font-sans: var(--font-geist-sans), "SF Pro Text", system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", ui-monospace, monospace;
+}
+
+html { color-scheme: dark; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+input, select, textarea { font: inherit; color: inherit; }
+button { font: inherit; cursor: pointer; }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
